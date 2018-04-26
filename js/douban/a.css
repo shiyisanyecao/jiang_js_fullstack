@@ -1,0 +1,11 @@
+body {
+  font-size: 10px;
+  color: #f00;
+}
+stylus a.styl,
+p {
+  color: #00f;
+}
+.green {
+  color: #ff0;
+}

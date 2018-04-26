@@ -28,7 +28,7 @@ yyj.girlAttributions.sex = 'female';
 console.log(yyj.girlAttributions.sex);
 var chicken = {
     duckSinging:function(){
-        consloe.log('嘎嘎嘎');
+        console.log('嘎嘎嘎');
     }
 }
 for(var i =0 ;i < 999;i ++){

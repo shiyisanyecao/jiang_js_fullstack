@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            display: block;
+        }
+        body {
+            -webkit-font-smoothing: antialiased;
+            background-color: #fff;
+            font: 12px/1.5 Microsoft YaHei,tahoma,arial,Hiragino Sans GB,\\5b8b\4f53,sans-serif;
+            color: #666;
+        }
+        .photo-search-btn {
+            position: absolute;
+            right: 65px;
+            top: 10px;
+            width: 19px;
+            height: 15px;
+            overflow: hidden;
+        }
+        .search-m .form {
+            left: 270px;
+            width: 400px;
+            position: absolute;
+            top: 25px;
+            height: 35px;
+        }
+        .cw-icon {
+            position: relative;
+            cursor: default;
+            zoom: 1;
+        }
+        .cw-icon i {
+            top: 0;
+            left: 0;
+            width: 82px;
+            height: 36px;
+        }
+        .button {
+            float: left;
+            width: 80px;
+            height: 36px;
+            font-family: tahoma,arial,Microsoft YaHei,Hiragino Sans GB,"\u5b8b\u4f53",sans-serif;
+            background: #f30213;
+            border: none;
+            border-radius: 0;
+            line-height: 1;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input {
+            -webkit-appearance: textfield;
+            background-color: white;
+            -webkit-rtl-ordering: logical;
+            cursor: text;
+            padding: 1px;
+            border-width: 2px;
+            border-style: inset;
+            border-color: initial;
+            border-image: initial;
+            text-rendering: auto;
+            color: initial;
+            letter-spacing: normal;
+            word-spacing: normal;
+            text-transform: none;
+            text-indent: 0px;
+            text-shadow: none;
+            display: inline-block;
+            text-align: start;
+            margin: 0em;
+            font: 400 13.3333px Arial;
+        }
+        #search-2014 {
+            position: relative;
+            z-index: 11;
+            float: left;
+            width: 384px;
+            margin: 27px 30px 0 95px;
+        }
+        #search-2014 .text {
+            float: left;
+            width: 294px;
+            height: 24px;
+            line-height: 24px;
+            color: #999;
+            padding: 4px;
+            margin-bottom: 4px;
+            border-width: 2px 0 2px 2px;
+            border-color: #f30213;
+            border-style: solid;
+            outline: 0;
+            font-size: 12px;
+        }
+        #search-2014 .photo-search-btn .upload-trigger {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            width: 500px;
+            height: 500px;
+            cursor: pointer;
+            filter: alpha(opacity=0);
+            opacity: 0;
+        }
+    </style>
+    <title>jingdong</title>
+</head>
+<body>
+    <div id="search-2014">
+        <ul id="shelper" class="hide" style="display: none;"></ul>
+        <div class="form">
+            <input type="text" id="key" accesskey="s" class="text blurcolor">
+            <span class="photo-search-btn">
+                <form id="search-img-upload">
+                    <span class="upload-bg"></span>
+                    <input type="file" name="file" class="upload-trigger" accept="image/png,image/jpeg,image/jpg">
+                </form>
+            </span>
+            <button class="button cw-icon"><i></i>搜索</button>
+        </div>
+    </div>
+</body>
+</html>

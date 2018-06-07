@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script>
+        // 所有css之前，我们先来决定htmlfont-size应该为 1rem=设备宽度/10
+        // 适配问题 不同的手机1rem 单位是 宽度10分之1
+        // 1rem = html fontsize
+        (function (w) {
+            // window 是js 全局 dom document 只是其中一部分
+            // 导航location.href　  navigator lbs 经纬度
+            // 陀螺仪 储存localstorage
+            let s = w.document;
+            // 找到html元素
+            let r = s.documentElement;
+            // 宽度的十分之一
+            let colWidth = r.clientWidth / 10; /*面试常考*/
+            console.log(colWidth);
+            r.style.fontSize = colWidth + 'px';
+        })(window)
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .col-md-6 {
+            height: 400px;
+        }
+        .col-md-6 img {
+            max-width: 100%;
+        }
+        .col-md-4 {
+            background-color: rgb(167, 159, 159);
+            font-size: 14px;
+        }
+        .col-md-4 table {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .col-md-4 .btn {
+            font-size: 17px;
+            background-color: green;
+            color: white;
+            margin-bottom: 15px;
+        }
+        .col-md-4 a {
+            color: green;
+            margin-right: 15px;
+        } 
+        .col-md-4 p {
+            font-size: 22px;
+        }
+        .col-md-2 {
+            height: 400px;
+        }
+        .col-md-2 img {
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="http://www.baidu.com"><img src="/main.jpg"/></a>
+            </div>
+            <div class="col-md-4">
+                <p>开始时间：2018-08-22 13:00 周三</p>
+                <p>结束时间：2018-08-22 17:00 周三</p>
+                <p>举办地点：<a>深圳市南山区桂庙路北瑞峰大厦瑞峰创业中心</a></p>
+                <p>主办方：<a>光环</a></p>
+                <p>报名截止：85天14时41分20秒</p>
+                <!-- <table>
+                    <tr>
+                        <th>开始时间:</th>
+                        <td>2018-08-22 13:00 周三</td>
+                    </tr>
+                    <tr>
+                        <th>结束时间:</th>
+                        <td>2018-08-22 17:00 周三</td>
+                    </tr>
+                    <tr>
+                        <th>举办地点:</th>
+                        <td><a>深圳市南山区桂庙路北瑞峰大厦瑞峰创业中心</a></td>
+                    </tr>
+                    <tr>
+                        <th>主办方:</th>
+                        <td><a>光环</a></td>
+                    </tr>
+                    <tr>
+                        <th>报名截止:</th>
+                        <td>85天22小时30分45秒</td>
+                    </tr>
+                </table> -->
+                <a class="btn">立即报名</a>活动即将开始
+            </div>
+            <div class="col-md-2">
+                <a href="http://www.baidu.com" target="blank"><img src="/static.png"/></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

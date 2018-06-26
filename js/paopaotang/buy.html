@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 红色 4库存
+    蓝色 6库存 -->
+    <!-- var phone = {
+        blue:6,
+        red:4
+    } -->
+    <!-- select onchange 事件 数量不填 提交按钮禁用 disabled 先禁用 后启用
+    红色 当数量为5时 oninput 事件 onchange 按钮数量不足 disabled
+    蓝色 当数量为5时 加入购物车 -->
+    <div class="container">
+        选择颜色：
+        <select id="myColor" onchange="mySelect()">
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+        </select>
+        输入购买数量：
+        <input type="text" id="input" oninput="myNum()">
+        <br><br>
+        您选择了颜色：
+        <div id="color"></div>
+        您选择了数量：
+        <div id="num"></div><br>
+        <!-- <button class="btn" onclick="submit()">提交</button> -->
+        <button class="btn">提交</button>
+    </div>
+</body>
+<script>
+    var phone = {
+        red:4,
+        blue:6
+    }
+    var myInput = document.querySelector('#input');
+    var myColor = document.querySelector('#myColor');
+    var btn = document.querySelector('.btn');
+    function myNum(){
+        document.querySelector('#num').innerHTML = myInput.value;
+    }
+    function mySelect(){
+        document.querySelector('#color').innerHTML = myColor.value;
+    }
+    btn.addEventListener("click",function(){
+        if(myColor.value == "red") {
+            if(myInput.value <= phone.red) {
+                btn.innerHTML = "选择成功"
+            } else {
+                btn.innerHTML = "库存不足"
+                return false;
+            }
+        } else {
+            if(myColor.value == "blue") {
+                if(myInput.value <= phone.blue) {
+                    btn.innerHTML = "选择成功"
+                } else {
+                    btn.innerHTML = "库存不足";
+                    return false;
+                }
+            }else {
+                if(myColor.value == "" || myInput.value == ""){
+                    alert('请选择颜色或数量');
+                    return false;
+                } else {
+                    return;
+                }
+            }
+        }
+    })
+    // function submit(){
+    //     if(myColor.value == "red") {
+    //         if(myInput.value <= phone.red) {
+    //             btn.innerHTML = "选择成功"
+    //         } else {
+    //             btn.innerHTML = "库存不足"
+    //             return false;
+    //         }
+    //     } else {
+    //         if(myColor.value == "blue") {
+    //             if(myInput.value <= phone.blue) {
+    //                 btn.innerHTML = "选择成功"
+    //             } else {
+    //                 btn.innerHTML = "库存不足";
+    //                 return false;
+    //             }
+    //         }else {
+    //             if(myColor.value == "" || myInput.value == ""){
+    //                 alert('请选择颜色或数量');
+    //                 return false;
+    //             } else {
+    //                 return;
+    //             }
+    //         }
+    //     }
+    // }
+    // var select = document.querySelector('#mySelect');
+    // var input = document.querySelector('#input');
+    // var num = document.querySelector('#color');
+    // var btn = document.querySelector('.btn');
+    // function show_sub(v) {
+    //     num.innerHTML = v;
+    // }
+    // $(function(){
+    //     var $inputwrapper = $('.container');
+    //     $inputwrapper.find('input').on('input prorpertychange',function(){
+    //     var result = $(this).val();
+    //     $inputwrapper.find('#num').html(result);
+    //     });
+    // })
+</script>
+</html>

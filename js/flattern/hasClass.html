@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js"></script>
+</head>
+<body>
+    <div class="box active huge_box"></div>
+    <script>
+        const box = document.querySelector('.box');
+        // console.log(box.classList.contains('active'));
+        // console.log($('.box').hasClass('active'));
+        // 类名字符串 用空格隔开 单纯indexOf 判断 子字符串的可能 最开始第一个 最后一个 中间的类名 左右至少有一个空格
+        // 1.开始和结束 有这个词就好了
+        // 词+空格 开始 ^\s*
+        // 结束 空格+词$
+        // 2.中间情况
+        // \s+词\s+
+        const cls = 'active';
+        const ele = box.className;
+        function hasClass(ele,cls) {
+            const reg = new RegExp('(^|\\s)'+cls+'(\\s|$)');
+            return reg.test(ele);
+        }
+        console.log(hasClass(ele,cls));
+        function removeClass(ele,cls) {
+            const reg = new RegExp('(^|\\s)'+cls+'(\\s|$)');
+            if(hasClass(ele,cls)) {
+                return ele.replace(reg,' ').trim();
+            }
+        }
+        console.log(removeClass(ele,cls));
+    </script>
+</body>
+</html>

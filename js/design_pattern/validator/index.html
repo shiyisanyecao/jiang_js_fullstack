@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单验证</title>
+</head>
+<body>
+    <form action="http://XXX.com/register" id="registerForm" method="post">
+        <div class="field">
+            请输入用户名：<input type="text" name="userName"/>
+        </div>
+        <div class="field">
+            请输入密码：<input type="password" name="password"/>
+        </div>
+        <div class="field">
+            请输入手机号码：<input type="tel" name="phoneNumber"/>
+        </div>
+        <button>提交</button>
+    </form>
+    <script src="validator.js"></script>
+    <script>
+        const registerForm = document.querySelector('#registerForm');
+        registerForm.onsubmit = function(){
+        //     const userNameResult = strategies.isNonEmpty(registerForm.userName.value,'用户名不能为空');
+        //     const passwordResult = strategies.minLength(registerForm.password.value,6,'密码长度不能少于六位');
+        //     const phoneNumResult = strategies.isNonEmpty(registerForm.phoneNumber.value,'手机号不能为空');
+        //     const phoneCheck = strategies.isMobilePhone(registerForm.phoneNumber.value,'手机格式有误');
+        //     if(!userNameResult.status) {
+        //         alert(userNameResult.msg);
+        //         return false;
+        //     }
+        //     if(!passwordResult.status) {
+        //         alert(passwordResult.msg);
+        //         return false;
+        //     }
+        //     if(!phoneNumResult.status) {
+        //         alert(phoneNumResult.msg);
+        //         return false;
+        //     }
+        //     if(!phoneCheck.status) {
+        //         alert(phoneCheck.msg);
+        //         return false;
+        //     }
+        //     return true;
+            var errorMsg = validateFunc();
+            if(errorMsg) {
+                alert(errorMsg);
+                return false;
+            }
+            return true;
+        }
+        // 具体的表单验证 -> strategies 集合了验证逻辑(抽象的去写验证) 
+        // 抽象 validateFunc 具体的代码
+        // 用户名不能为空 手机号不能为空 ...
+        // 什么元素 什么规则 做什么验证
+        function validateFunc() {
+            // const userNameResult = strategies.isNonEmpty(registerForm.userName.value,'用户名不能为空');
+            // if(userNameResult) {
+            //     return userNameResult;
+            // }
+            // const passwordResult = strategies.minLength(registerForm.password.value,6,'密码长度不能少于六位');
+            // if(passwordResult) {
+            //     return passwordResult;
+            // }
+            // const phoneNumResult = strategies.isMobilePhone(registerForm.phoneNumber.value,'手机格式有误');
+            // if(phoneNumResult) {
+            //     return phoneNumResult;
+            // }
+            // 验证对象
+            // 验证函数任务中 已经有了验证策略类
+            // 有很多的不确定的数量表单元素及规则要去验证
+            // 中介者模式 门清 内存 颜色 品牌交给中介者对象
+            // 轻松很多
+            // 要一个验证对象 专业的 将要验证的元素交给他 验证的过程 抽象 
+            // 元素给对象？
+            var validator = new Validator();
+            validator.add(registerForm.userName,'isNonEmpty','用户名不能为空');
+            validator.add(registerForm.password,'minLength:6','密码最小长度为六位');
+            validator.add(registerForm.phoneNumber,'isMobilePhone','手机格式错误');
+            var errorMsg = validator.start();
+            return errorMsg;
+        }
+        // 将要验证的表单元素加进来一个数组
+        // 开启一一验证 strategies
+        function Validator() {
+            this.cache = [];
+        } 
+        Validator.prototype = {
+            // rule(规则名):6(规则参数)
+            add:function(dom,rule,errorMsg){
+                var ary = rule.split(':');
+                this.cache.push(function(){
+                    var strategy = ary.shift();//pop
+                    // console.log(strategy);
+                    // console.log(dom.value);
+                    ary.unshift(dom.value);
+                    ary.push(errorMsg);
+                    // [value,params,errorMsg] strategies参数
+                    return strategies[strategy].apply(dom,ary);
+                })
+            },
+            start:function(){
+                for(var i = 0,validateFunc;validateFunc = this.cache[i++];) {
+                    var msg = validateFunc();
+                    if(msg) {
+                        return msg;
+                    }
+                }
+            }
+        }
+        // // function isEmpty(val) {
+        //     if(val.trim().length > 0) {
+        //         return false;
+        //     }
+        //     return true;
+        // }
+        
+    </script>
+</body>
+</html>

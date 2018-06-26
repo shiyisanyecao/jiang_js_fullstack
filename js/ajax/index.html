@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="user-box">
+        <p class="username"></p>
+        <p class="desc"></p>
+    </div>
+    <script src="https://cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script>
+    <script>
+        // xhr xmlHttpRequest
+        // js 主动请求数据的过程
+        // ajax 是js具有web2.0 动态请求页面的能力
+        let xhr = null;
+        // js主动发出一次http请求request 支持的数据交换格式
+        if(window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+        } else {
+            xhr = new ActiveXObject("Microsoft.XMLHttp");
+        }
+        // false | true 异步请求
+        // 建立连接
+        xhr.open('get','/user.json',true);
+        // 发送
+        xhr.send();
+        // 一旦发送 状态码发生改变
+        xhr.onreadystatechange = function() {
+            // 200 http状态码 成功响应
+            if(xhr.readyState == 4 && xhr.status == 200) {
+                const zk = JSON.parse(xhr.responseText);
+                console.log(zk.name);
+            }
+        }
+        // fetch('/user.json').then(data => data.json()).then(data => {
+        //     console.log(data);
+        // })
+        // $(function(){
+        //     $.getJSON("/user.json",function(data){
+        //         console.log(data);
+        //         $('.username').html(data.name);
+        //         $('.desc').html(data.desc);
+        //     });
+        // });
+    </script>
+</body>
+</html>

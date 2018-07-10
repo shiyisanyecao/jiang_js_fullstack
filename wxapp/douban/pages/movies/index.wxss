@@ -1,4 +1,0 @@
-/* pages/movies/index.wxss */
-
-/* 导入block模板的wxss */
-@import "block/block.wxss";

@@ -1,0 +1,29 @@
+{
+  "name": "notes",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "antd": "^3.7.0",
+    "axios": "^0.18.0",
+    "koa-body": "^4.0.4",
+    "koa-cors": "^0.0.16",
+    "koa-router": "^7.4.0",
+    "lodash": "^4.17.10",
+    "lokijs": "^1.5.5",
+    "moment": "^2.22.2",
+    "mysql2": "^1.5.3",
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "1.1.4",
+    "semantic-ui-css": "^2.3.3",
+    "sequelize": "^4.38.0"
+  },
+  "scripts": {
+    "server": "nodemon server/app.js",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}

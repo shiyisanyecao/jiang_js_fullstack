@@ -5,10 +5,11 @@ router.get('/', async (ctx) => {
     ctx.body = '首页'
 })
 router.get('/users', async (ctx) => {
-    const user = {
-        name: 'zk',
-        age: 18
-    }
+    const user = await User.findAll({
+        where: {
+            isdelete: 0
+        }
+    })
     ctx.body = user
 })
 router.post('/user', koaBody(), async (ctx) => {

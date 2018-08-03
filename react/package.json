@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "koa": "^2.5.2"
+    "koa": "^2.5.2",
+    "react-sticky": "^6.0.3",
+    "umi-plugin-datahub": "^0.1.2"
   }
 }

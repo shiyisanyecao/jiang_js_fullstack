@@ -1,0 +1,128 @@
+.home {
+  background: #fff;
+}
+.search {
+  padding: .16rem .32rem;
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+}
+.search :global .am-search-input {
+  border-radius: 0;
+  height: .76rem;
+}
+.search :global .am-search-input input {
+  height: .76rem;
+}
+.search :global .am-search-input .am-search-clear {
+  top: .1rem;
+}
+.search :global .am-search-synthetic-ph {
+  line-height: .76rem;
+}
+.search :global .am-search-cancel {
+  width: 0;
+  padding: 0;
+}
+.header {
+  background-image: linear-gradient(90deg, #0af, #0085ff);
+  color: #fff;
+  padding: .44rem .32rem 0;
+  line-height: 1.2;
+  font-size: .36rem;
+  font-weight: 700;
+  height: .46rem;
+}
+.toptoon {
+  height: 2.1rem;
+  border: none;
+}
+.toptoon img {
+  height: 100%;
+  width: 100%;
+}
+.grid {
+  background: #fff;
+  padding: .24rem 0 .44rem;
+}
+.grid .typeItem img {
+  width: 1rem;
+}
+.grid .typeItem .text {
+  margin-top: .08rem;
+  color: #666;
+  font-size: .28rem;
+  font-weight: 300;
+}
+.ad {
+  padding: .24rem;
+}
+.ad img {
+  width: 100%;
+}
+.sep {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: .2rem 0;
+  font-size: .32rem;
+}
+.sep .seph {
+  width: .5rem;
+  height: .04rem;
+  background: #aaa;
+  margin: 0 .3rem;
+}
+.restItem {
+  border-bottom: .014rem solid #eee;
+  padding: .4rem 0;
+  display: flex;
+}
+.restItem .logo {
+  width: 1.4rem;
+  padding: 0 .2rem;
+}
+.restItem .logo img {
+  width: 100%;
+}
+.restItem .info {
+  width: 100%;
+  padding-right: .2rem;
+}
+.restItem .info .title {
+  display: flex;
+  align-items: center;
+  font-size: .32rem;
+  margin-bottom: .3rem;
+}
+.restItem .info .title .premium {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #6f3f15;
+  background-image: linear-gradient(-139deg, #fff100, #ffe339);
+  font-size: .26rem;
+  margin-right: .1rem;
+  border-radius: .04rem;
+  font-weight: 700;
+  width: .64rem;
+  height: .36rem;
+}
+.restItem .info .subInfo {
+  color: #666;
+  font-weight: 300;
+  font-size: .22rem;
+  margin: .24rem 0;
+}
+.restItem .info .subInfo .right {
+  float: right;
+}
+.restItem .info .recommend {
+  display: flex;
+  align-items: center;
+  font-size: .22rem;
+  font-weight: 300;
+}
+.restItem .info .recommend .logo {
+  width: .22rem;
+  height: .22rem;
+  padding: 0 0.1rem 0 0;
+}

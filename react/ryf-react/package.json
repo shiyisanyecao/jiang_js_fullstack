@@ -8,7 +8,7 @@
     "koa-body": "^4.0.4",
     "koa-cors": "^0.0.16",
     "koa-router": "^7.4.0",
-    "lodash": "^4.17.10",
+    "lodash": "^4.17.21",
     "lokijs": "^1.5.5",
     "moment": "^2.22.2",
     "mysql2": "^1.5.3",
